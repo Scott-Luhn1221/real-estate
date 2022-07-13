@@ -20,8 +20,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../../styles/css/styles.css" rel="stylesheet" />
     <meta charset="utf-8">
-    <title>Customer Sign Up</title>
-
+    <!--  <title>Customer Sign Up</title>-->
     <link rel="canonical"
           href="https://getbootstrap.com/docs/4.4/examples/cover/">
 
@@ -66,7 +65,7 @@
     <main role="main" class="inner cover">
 
 
-        <form:form modelAttribute="customer" action="/sign-up" method="post">
+        <form:form modelAttribute="customer" action="/customer-sign-up" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputFirstName">First Name</label>
@@ -99,6 +98,7 @@
                                 id="inputPassword4" />
                 </div>
             </div>
+            
             <button type="submit" class="btn btn-primary">Customer Sign Up</button>
         </form:form>
 

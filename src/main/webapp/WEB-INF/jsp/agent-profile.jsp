@@ -104,7 +104,7 @@
 						<td><c:out value="${agent_property.squarefoot}" /></td>
 						<td><c:out value="${agent_property.price}" /></td>
 						<td><c:out value="${agent_property.datePosted}" /></td>
-						<td><img alt="logo goes here" height="150px" width="400px"
+						<td><img alt="property picture goes here" height="150px" width="400px"
 								src=>
  </td>
 					</tr>

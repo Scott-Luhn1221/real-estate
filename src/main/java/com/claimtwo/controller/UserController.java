@@ -36,7 +36,7 @@ public class UserController {
 	}
 
 	@GetMapping("/customer-sign-up")
-	public ModelAndView customerSignUp(Model model) {
+	public ModelAndView customerSignUp(Model model,  HttpSession session) {
 		return new ModelAndView("customer-sign-up", "customer", new Customer());
 	}
 
@@ -50,7 +50,28 @@ public class UserController {
 		System.out.println("PROPERTY ATTRIBUTE: " + model.addAttribute(list));
 		return "customer-profile";
 	}
+	
+	@GetMapping("/customer-login")
+	public ModelAndView customerLogin(Model model) {
+		return new ModelAndView("customer-login", "customer", new Customer());
+	}
+	
+	@PostMapping("/customer-login")
+	public String handleCustomerLogIn(Model model, @ModelAttribute("customer") Customer customer, HttpSession session) {
+		model.addAttribute("newCustomer", customer);
+		session.setAttribute("newCustomer", customer);
+		return "customer-profile";
+	}
 
+	@GetMapping("/customer-profile")
+	public ModelAndView customerProfile(Model model, HttpSession session) {
+		session.getAttribute("setCustomer");
+		List<Property> list = propertyService.getAllProperties();
+		System.out.println(list);
+		model.addAttribute("property", list);
+		System.out.println("PROPERTY ATTRIBUTE: " + model.addAttribute(list));
+		return new ModelAndView("propertylist", "property", new Property());
+	}
 
 
 	@GetMapping("/agent-sign-up")
@@ -89,21 +110,6 @@ public class UserController {
 		model.addAttribute("property", list);
 		System.out.println("PROPERTY ATTRIBUTE: " + model.addAttribute(list));
 		return new ModelAndView("propertylist", "property", new Property());
-	}
-
-	@GetMapping("/customer-profile")
-	public ModelAndView customerProfile(Model model, HttpSession session) {
-		session.getAttribute("setCustomer");
-		List<Property> list = propertyService.getAllProperties();
-		System.out.println(list);
-		model.addAttribute("property", list);
-		System.out.println("PROPERTY ATTRIBUTE: " + model.addAttribute(list));
-		return new ModelAndView("propertylist", "property", new Property());
-	}
-
-	@GetMapping("/customer-login")
-	public ModelAndView customerLogin(Model model) {
-		return new ModelAndView("customer-login", "customer", new Customer());
 	}
 
 	@GetMapping("/add-property")

@@ -61,7 +61,7 @@
             </nav>
         </div>
     </header>
-<form:form modelAttribute="agent" action="/log-in" method="post">
+<form:form modelAttribute="agent" action="/agent-login" method="post">
 				<h3 class="text-danger">${msg}</h3>
 
 

@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Agent Profile</title>
+<title>Customer Profile</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon"
 	href="../../styles/assets/favicon.ico" />
@@ -84,10 +84,6 @@
 						<th scope="col">City</th>
 						<th scope="col">State</th>
 						<th scope="col">Zip Code</th>
-						<th scope="col">Squarefoot</th>
-						<th scope="col">Price</th>
-						<th scope="col">Date Posted</th>
-						<th scope="col">Images</th>
 					</tr>
 					<tr>
 					<td> Please Work </td>
@@ -95,16 +91,12 @@
 					<tr>
 				</thead>
 
-				<c:forEach var="agent_property" items="${property}">
+				<c:forEach var="customer_property" items="${property}">
 					<tr>
-						<td><c:out value="${agent_property.street}" /></td>
-						<td><c:out value="${agent_property.city}" /></td>
-						<td><c:out value="${agent_property.state}" /></td>
-						<td><c:out value="${agent_property.zip}" /></td>
-						<td><c:out value="${agent_property.squarefoot}" /></td>
-						<td><c:out value="${agent_property.price}" /></td>
-						<td><c:out value="${agent_property.datePosted}" /></td>
-						<td><c:out value="${agent_property.images}" /></td>
+						<td><c:out value="${customer_property.street}" /></td>
+						<td><c:out value="${customer_property.city}" /></td>
+						<td><c:out value="${customer_property.state}" /></td>
+						<td><c:out value="${customer_property.zip}" /></td>
 					</tr>
 				</c:forEach>
 			</table>
