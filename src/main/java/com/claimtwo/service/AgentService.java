@@ -22,7 +22,7 @@ public class AgentService {
 		return agentRepository.findAll();
 	}
 
-	public void deleteStudentById(String email) {
+	public void deleteAgentById(String email) {
 		agentRepository.deleteById(email);
 	}
 
